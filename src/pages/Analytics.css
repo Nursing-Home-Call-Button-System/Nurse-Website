@@ -1,0 +1,21 @@
+.search-bar {
+  width: 100%;
+  max-width: 1200px; /* Increased length */
+  margin-top: 15px;
+}
+
+.search-bar input {
+  padding: 12px;
+  border-radius: 25px; /* More rounded edges */
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add a slight focus effect */
+.search-bar input:focus {
+  border-color: rgba(182, 28, 234, 1); /* Purple border on focus */
+  box-shadow: 0 0 8px rgba(182, 28, 234, 0.5);
+}

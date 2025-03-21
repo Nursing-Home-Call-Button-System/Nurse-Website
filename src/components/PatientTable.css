@@ -1,0 +1,26 @@
+.patient-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .table {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0px 10px; /* Adds spacing between rows */
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px; /* More padding */
+    vertical-align: middle; /* Align text properly */
+  }
+  
+  .table-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  
