@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
 import TaskList from "./pages/TaskList";
 import Settings from "./pages/Settings";
+import Login from './components/Login';
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/task-list" element={<TaskList />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/" element={<Login />} />
           </Routes>
         </div>
       </div>

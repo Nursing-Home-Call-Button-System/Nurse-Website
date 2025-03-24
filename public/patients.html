@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registered Patients</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="dashboard.css" />
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Registered Patients</h1>
+    <table id="patients-table">
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Room Number</th>
+        </tr>
+      </thead>
+      <tbody id="patients-body">
+        <!-- Data will load here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="patients.js"></script>
+</body>
+</html>

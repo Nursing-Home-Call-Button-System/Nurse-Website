@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Alerts Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🏥 Nurse Panel</h2>
+    <a href="dashboard.html">Alerts</a>
+    <a href="patients.html">Patients</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <h1>Patient Alerts</h1>
+
+      <div style="text-align: right; margin-bottom: 20px;">
+        <button onclick="window.location.href='patients.html'" class="view-patients-button">
+          View Registered Patients
+        </button>
+      </div>
+
+      <!-- Alerts Table -->
+      <table id="alerts-table">
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Room Number</th>
+            <th>Alert Type</th>
+            <th>Comment</th>
+            <th>Audio Message</th>
+          </tr>
+        </thead>
+        <tbody id="alerts-body">
+          <!-- Data will be injected here -->
+        </tbody>
+      </table>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button id="next-btn" class="view-patients-button">Next Page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
