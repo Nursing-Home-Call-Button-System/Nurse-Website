@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Settings</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="profile-section">
+    <img id="profile-pic" src="default-profile.png" alt="Profile Picture">
+    <h3 id="nurse-name">Dr. Nurse</h3>
+  </div>
+
+  <h2>🏥 Nurse Panel</h2>
+  <a href="dashboard.html">Alerts</a>
+  <a href="patients.html">Patients</a>
+  <a href="settings.html">Settings</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <div class="container">
+    <h1>Account Settings</h1>
+
+    <form id="settings-form">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" placeholder="Enter First Name">
+      </div>
+
+      <div class="form-group">
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" accept="image/*">
+      </div>
+
+      <button type="submit" class="view-patients-button">Save Settings</button>
+    </form>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+
+<script>
+function logout() {
+  window.location.href = "index.html";
+}
+</script>
+
+<script>
+// Save Settings
+document.getElementById('settings-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const firstName = document.getElementById('firstName').value.trim();
+  const profilePicFile = document.getElementById('profilePic').files[0];
+
+  const nurseProfile = { firstName: firstName };
+
+  if (profilePicFile) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      nurseProfile.profilePic = event.target.result;
+      localStorage.setItem('nurseProfile', JSON.stringify(nurseProfile));
+      alert('✅ Settings saved successfully!');
+    };
+    reader.readAsDataURL(profilePicFile);
+  } else {
+    localStorage.setItem('nurseProfile', JSON.stringify(nurseProfile));
+    alert('✅ Settings saved successfully!');
+  }
+});
+</script>
+
+<script>
+// Load Profile on Settings Page if already saved
+const existingProfile = JSON.parse(localStorage.getItem('nurseProfile'));
+
+if (existingProfile) {
+  if (existingProfile.firstName) {
+    document.getElementById('firstName').value = existingProfile.firstName;
+  }
+}
+</script>
+
+</body>
+</html>

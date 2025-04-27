@@ -13,18 +13,43 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 </head>
+
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
+    <div class="profile-section">
+      <img id="profile-pic" src="default-profile.png" alt="Profile Picture">
+      <h3 id="nurse-name">Dr. Name</h3>
+    </div>
+  
     <h2>🏥 Nurse Panel</h2>
     <a href="dashboard.html">Alerts</a>
     <a href="patients.html">Patients</a>
+    <a href="settings.html">Settings</a>
     <a href="#" onclick="logout()">Logout</a>
   </div>
+  
+  
 
   <!-- Main Content -->
   <div class="main-content">
     <div class="container">
+
+      <!-- Top Greeting and Search Bar -->
+      <div class="top-header">
+        <div class="left-side">
+          <h1 id="greeting">Hello, Nurse</h1>
+          <p id="today-date"></p>
+
+        </div>
+        <div class="right-side">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search by name or room..." />
+          </div>
+        </div>
+      </div>
+
       <h1>Patient Alerts</h1>
 
       <div style="text-align: right; margin-bottom: 20px;">
@@ -52,10 +77,48 @@
       <div style="text-align: center; margin-top: 20px;">
         <button id="next-btn" class="view-patients-button">Next Page</button>
       </div>
+
     </div>
   </div>
 
-  <!-- Script -->
+  <!-- JavaScript -->
   <script src="dashboard.js"></script>
+
+  <!-- Inline JavaScript for date and greeting -->
+  <script>
+    const profileData = JSON.parse(localStorage.getItem('nurseProfile'));
+    
+    if (profileData) {
+      // Update sidebar name
+      const nameField = document.getElementById('nurse-name');
+      if (profileData.firstName && profileData.title) {
+        nameField.textContent = `${profileData.title} ${profileData.firstName}`;
+      } else if (profileData.firstName) {
+        nameField.textContent = `Dr. ${profileData.firstName}`;
+      }
+    
+      // Update sidebar profile pic
+      const profileImage = document.getElementById('profile-pic');
+      if (profileData.profilePic) {
+        profileImage.src = profileData.profilePic;
+      }
+    
+      // Update main greeting
+      const greeting = document.getElementById('greeting');
+      if (profileData.firstName && profileData.title) {
+        greeting.textContent = `Hello, ${profileData.title} ${profileData.firstName}`;
+      } else if (profileData.firstName) {
+        greeting.textContent = `Hello, Dr. ${profileData.firstName}`;
+      }
+    }
+    
+    // Always update today's date
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('today-date').textContent = `Today is ${today.toLocaleDateString('en-US', options)}`;
+    </script>
+    
+  
+
 </body>
 </html>

@@ -216,4 +216,25 @@ function logout() {
       console.error("Logout error:", error);
     });
   }
+
+// 🆕 Live Search Feature
+const searchInput = document.getElementById('search-input');
+
+searchInput.addEventListener('input', function() {
+    const searchValue = this.value.trim().toLowerCase(); // Get search input text
+    const tableRows = document.querySelectorAll('#alerts-body tr'); // Get all patient rows
+
+    tableRows.forEach(row => {
+        const patientName = row.children[0]?.textContent.toLowerCase() || "";
+        const roomNumber = row.children[1]?.textContent.toLowerCase() || "";
+
+        // Check if patient name OR room number matches the search text
+        if (patientName.includes(searchValue) || roomNumber.includes(searchValue)) {
+            row.style.display = ''; // Show matching row
+        } else {
+            row.style.display = 'none'; // Hide non-matching row
+        }
+    });
+});
+
   

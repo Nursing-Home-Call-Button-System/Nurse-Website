@@ -1,181 +1,301 @@
 /* Reset & Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f2f6fc;
-    color: #333;
-    padding: 30px;
-  }
-  
-  /* Container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Heading */
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #0057a3;
-  }
-  
-  /* Table Styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    border: 1px solid #e0e0e0;
-  }
-  
-  th, td {
-    padding: 14px 12px;
-    text-align: center;
-    border-bottom: 1px solid #eaeaea;
-  }
-  
-  th {
-    background-color: #0057a3;
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Alert Type Badges */
-  .emergency {
-    background-color: #ffe5e5;
-    color: #cc0000;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 6px 10px;
-    display: inline-block;
-  }
-  
-  .non-emergency {
-    background-color: #e5f0ff;
-    color: #0047b3;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 6px 10px;
-    display: inline-block;
-  }
-  
-  /* Comment Input & Button */
-  .comment-input {
-    width: 70%;
-    padding: 6px 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.9rem;
-  }
-  
-  .save-button {
-    padding: 6px 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    margin-left: 8px;
-    font-size: 0.85rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .save-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Navigation Buttons */
-  .view-patients-button,
-  #next-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .view-patients-button:hover,
-  #next-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Table */
-  @media (max-width: 768px) {
-    table {
-      font-size: 0.85rem;
-    }
-  
-    .comment-input {
-      width: 100%;
-      margin-bottom: 6px;
-    }
-  
-    .save-button {
-      margin-top: 6px;
-      width: 100%;
-    }
-  }
-  /* Sidebar Layout */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    background-color: #f2f6fc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f6fc;
+  color: #333;
+  padding: 30px;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #0057a3;
+  color: white;
+  height: 100vh;
+  padding: 30px 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #004080;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 30px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Header Layout */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 50%;
+}
+
+.left-side h2 {
+  font-size: 1.8rem;
+  color: #6a1b9a;
+}
+
+.left-side p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper .search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 16px;
+  color: #888;
+}
+
+#search-input {
+  width: 400px;
+  height: 48px;
+  padding: 10px 12px 10px 42px; /* extra left padding for icon */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 10px rgba(106, 27, 154, 0.5);
+}
+
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #0057a3;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+th {
+  background-color: #0057a3;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Alert Type Badges */
+.emergency {
+  background-color: #ffe5e5;
+  color: #cc0000;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.non-emergency {
+  background-color: #e5f0ff;
+  color: #0047b3;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+/* Comment Input & Button */
+.comment-input {
+  width: 140px;
+  padding: 5px 7px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.save-button {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+/* Navigation Buttons */
+.view-patients-button,
+#next-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-patients-button:hover,
+#next-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Audio Player Styling */
+audio {
+  width: 150px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
   }
   
-  .sidebar {
-    width: 220px;
-    background-color: #0057a3;
-    color: white;
-    height: 100vh;
-    padding: 30px 20px;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
+  .comment-input {
+    width: 100%;
+    margin-bottom: 6px;
   }
-  
-  .sidebar h2 {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
+
+  .save-button {
+    margin-top: 6px;
+    width: 100%;
   }
-  
-  .sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 20px;
-    font-weight: 500;
-    padding: 8px 10px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-  }
-  
-  .sidebar a:hover {
-    background-color: #004080;
-  }
-  
-  /* Main Content Area */
-  .main-content {
-    margin-left: 240px; /* Sidebar width + spacing */
-    width: calc(100% - 240px);
-    padding: 30px;
-  }
-  
+}
+
+/* Settings Form */
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-section img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-section h3 {
+  font-size: 1rem;
+  color: white;
+}
+
+#greeting {
+  font-size: 2rem;
+  color: #0057a3;
+  margin-bottom: 4px; /* smaller gap */
+  text-align: left;
+}
+
+#today-date {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+  margin-top: 0px; /* remove big gap */
+  text-align: left;
+}
