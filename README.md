@@ -1,54 +1,42 @@
-# Nursing Home Call Button System - Nurse Website
+🏥 Nurse Dashboard Website
 
-## Project Overview
-This is a **web application** for nurses to **monitor patient calls, manage patient data, and view analytics**.  
-It includes:
-✔ **Dashboard** with real-time patient updates  
-✔ **Analytics Page** displaying patient info & search  
-✔ **Modal Form** to add new patients  
-✔ **Routing & Sidebar Navigation**  
+A simple web application for nurses to view patient alerts, manage patients, and personalize their account with profile pictures and settings.
 
----
+✨ Features
 
-## Technologies Used
-| Technology  | Purpose |
-|-------------|---------|
-| **React.js** | Frontend framework |
-| **Bootstrap** | UI styling and components |
-| **React Router** | Handles navigation between pages |
-| **Firebase Firestore** | (Planned) Database to store patient data |
-| **Git & GitHub** | Version control & collaboration |
+View real-time emergency and non-emergency alerts from patients
+Play audio messages attached to alerts
+Add comments on alerts
+Manage personal profile settings (Name, Email, Birthday, Title, Profile Picture)
+Search bar to filter patients by name or room number
+Responsive and clean modern UI for easy navigation
+📂 Project Structure
 
----
+public/
+├── dashboard.html     # Main patient alerts dashboard
+├── dashboard.css       # Styling for dashboard
+├── dashboard.js        # JS logic for dashboard (loading alerts, search, etc.)
+├── settings.html       # Settings page for nurse profile management
+└── favicon.png         # App icon
+🛠️ Technologies Used
 
-## Folder Structure
+HTML5, CSS3, JavaScript
+Firebase Firestore – for patient alerts and user authentication
+Firebase Storage – for storing patient audio messages
+LocalStorage – for saving nurse profile settings locally
+🚀 Getting Started
 
-/nurse-dashboard              # Root project folder
-│── /src                      # Source code directory
-│   ├── /components           # Reusable UI components
-│   │   ├── Sidebar.js        # Sidebar navigation
-│   │   ├── Header.js         # Header with user info
-│   │   ├── SearchBar.js      # Search input component
-│   │   ├── AddPatientModal.js # Popup form to add patients
-│   ├── /pages                # Different sections of the app
-│   │   ├── Dashboard.js      # Main dashboard page
-│   │   ├── Analytics.js      # Page with patient data
-│   │   ├── TaskList.js       # Placeholder for task list page
-│   │   ├── Settings.js       # Placeholder for settings page
-│   ├── /styles               # CSS files for styling
-│   ├── App.js                # Main React app file with routing
-│   ├── firebaseConfig.js     # Firebase setup (to be added)
-│── package.json              # Project dependencies and scripts
-│── README.md                 # Project documentation
+Clone the repository:
+git clone https://github.com/viyamira/user_interface-circular.git
+Navigate to the project folder:
+cd user_interface-circular/public
+Open dashboard.html in your browser to start the app.
+✅ Note: Make sure Firebase is properly configured in your dashboard.js if you are testing live!
+
+📸 Screenshots
 
 
----
+Dashboard	Settings Page
+📄 License
 
-## How to Run the Project
-### Install dependencies
-```sh
-npm install
-
-## Run the project
-npm start
-
+This project is for educational and nonprofit purposes only.
