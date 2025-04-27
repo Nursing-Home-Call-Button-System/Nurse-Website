@@ -35,10 +35,17 @@ public/ ├── dashboard.html # Main patient alerts dashboard ├── dashb
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/viyamira/user_interface-circular.git
+    ```bash
+    git clone https://github.com/viyamira/user_interface-circular.git
+    ```
 
 2. Navigate to the project folder:
-cd user_interface-circular/public
-Open dashboard.html in your browser to start the app.
-✅ Note: Make sure Firebase is properly configured inside your dashboard.js if you are testing live!
+
+    ```bash
+    cd user_interface-circular/public
+    ```
+
+3. Open `index.html` in your browser to start the app.
+
+
+
