@@ -17,12 +17,28 @@ A simple web application for nurses to view patient alerts, manage patients, and
 
 ## 🗂️ Project Structure
 
-📂 public/
-  ├── 📄 dashboard.html      - Main patient alerts dashboard
-  ├── 📄 dashboard.css       - Styling for dashboard
-  ├── 📄 dashboard.js        - JS logic for dashboard (loading alerts, search, etc.)
-  ├── 📄 settings.html       - Settings page for nurse profile management
-  ├── 📄 favicon.png         - App icon
+```
+public/
+├── dashboard.css
+├── dashboard.html
+├── dashboard.js
+├── database.html
+├── favicon.ico
+├── index.html
+├── login.css
+├── login.js
+├── logo192.png
+├── logo512.png
+├── patients.html
+├── patients.js
+├── settings.html
+
+src/
+├── firebaseConfig.js
+└── images/
+    ├── logo.png
+    └── logo2.png
+```
 
 
 
